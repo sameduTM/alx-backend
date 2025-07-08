@@ -25,7 +25,7 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-    
+
     def index_range(self, page: int, page_size: int) -> tuple:
         """return a tuple of size two with start index and end index
         """
@@ -35,11 +35,11 @@ class Server:
         return (start_index, end_index)
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            """Simple pagination to get page"""
-            assert type(page) == int and type(page_size) == int
-            assert page > 0 and page_size > 0 and type(page)
-            idx_range = self.index_range(page, page_size)
-            dataset = self.dataset()
-            if idx_range:
-                return dataset[idx_range[0]:idx_range[1]]
-            return []
+        """Simple pagination to get page"""
+        assert type(page) == int and type(page_size) == int
+        assert page > 0 and page_size > 0 and type(page)
+        idx_range = self.index_range(page, page_size)
+        dataset = self.dataset()
+        if idx_range:
+            return dataset[idx_range[0]:idx_range[1]]
+        return []
