@@ -39,7 +39,8 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int, page_size: int = 10) -> Dict:
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """return a dictionary with key-value pairs"""
         assert index in range(0, len(self.dataset()))
         next_index = index + page_size
         data = self.dataset()
