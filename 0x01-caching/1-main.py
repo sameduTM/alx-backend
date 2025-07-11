@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-""" 1-main """
-FIFOCache = __import__('1-fifo_cache').FIFOCache
+"""
+Test
+"""
+import sys
 
-my_cache = FIFOCache()
-my_cache.put("A", "Hello")
-my_cache.put("B", "World")
-my_cache.put("C", "ALX")
-my_cache.put("D", "School")
-my_cache.print_cache()
-my_cache.put("E", "Battery")
-my_cache.print_cache()
-my_cache.put("C", "Street")
-my_cache.print_cache()
-my_cache.put("F", "Mission")
-my_cache.print_cache()
+try:
+    FIFOCache = __import__('1-fifo_cache').FIFOCache
+
+    my_cache = FIFOCache()
+    my_cache.print_cache()
+    my_cache.put("test1", "myValue")
+    my_cache.print_cache()
+    my_cache.put(None, "myValue")
+    my_cache.print_cache()
+    my_cache.put("test1", None)
+    my_cache.print_cache()
+except:
+    print(sys.exc_info()[1])
