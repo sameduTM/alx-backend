@@ -2,7 +2,6 @@
 """ FIFO caching
 """
 from base_caching import BaseCaching
-from collections import OrderedDict
 
 
 class FIFOCache(BaseCaching):
@@ -20,7 +19,7 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
         keys_list = list(self.cache_data)
         if key is None or item is None:
-            return None
+            return
         if len(self.cache_data) > self.MAX_ITEMS:
             self.cache_data.pop(keys_list[0])
             print(f"DISCARD: {keys_list[0]}")
