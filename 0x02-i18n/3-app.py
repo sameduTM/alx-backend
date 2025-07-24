@@ -22,7 +22,6 @@ class Config:
 
 
 app.config.from_object(Config)
-
 babel = Babel(app)
 
 
@@ -39,5 +38,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
+    app.run(debug=True)
