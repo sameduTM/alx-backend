@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Basic Babel setup"""
 from flask_babel import Babel
-app = __import__('0-app.py').app
+app = __import__('0-app').app
 
 
 class Config:
