@@ -22,4 +22,4 @@ msgid "home_title"
 msgstr "Bienvenue chez ALX"
 
 msgid "home_header"
-msgstr "Bonjour tout le monde"
+msgstr "Bonjour monde!"
