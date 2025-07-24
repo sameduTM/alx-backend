@@ -9,11 +9,13 @@
 
 <body>
     <h1>{{ _('home_header') }}</h1>
-    {% if not get_user() %}
-    <h2>You are not logged in.</h2>
-    {% else %}
-    <h2>You are logged in as {{ get_user().name }}.</h2>
-    {% endif %}
+    <p>
+        {% if not get_user() %}
+        You are not logged in.
+        {% else %}
+        You are logged in as {{ get_user().name }}.
+        {% endif %}
+    </p>
 </body>
 
 </html>
