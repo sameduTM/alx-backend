@@ -28,8 +28,10 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale():
     """determine best match with supported languages"""
-    return request.args.get('locale') or \
-        request.accept_languages.best_match(Config.LANGUAGES)
+    locale = request.args.get('locale')
+    if locale and locale in Config.LANGUAGES:
+        return request.args.get('locale')
+    return request.accept_languages.best_match(Config.LANGUAGES)
 
 
 @app.route('/')
