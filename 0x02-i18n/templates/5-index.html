@@ -12,7 +12,6 @@
     <p>
         {% set user = get_user() %}
         {% if user and 'name' in user %}
-            {{ user["name"] }}
             {{ _('logged_in_as', username=user["name"]) }}
         {% else %}
             {{ _('not_logged_in') }}
