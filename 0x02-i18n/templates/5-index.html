@@ -10,11 +10,14 @@
 <body>
     <h1>{{ _('home_header') }}</h1>
     <p>
-        {% if not get_user() %}
-        {{ _('not_logged_in') }}
+        {% set user = get_user() %}
+        {% if user and 'name' in user %}
+            {{ user["name"] }}
+            {{ _('logged_in_as', username=user["name"]) }}
         {% else %}
-        You are logged in as {{ get_user().name }}.
+            {{ _('not_logged_in') }}
         {% endif %}
+
     </p>
 </body>
 
